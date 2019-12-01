@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+
+    <script src="parentCtrl.js"></script>
+    <script src="childCtrl.js"></script>
+    <script src="brotherCtrl.js"></script>
+</head>
+<body >
+
+    <div ng-controller="parentCtrl">
+        <p>X = <input type="number" ng-model="x"></p>
+        <p>Modify X to 3 to see the - BOOM</p>
+    </div>
+    <div ng-controller="brotherCtrl">
+        <p>{{everyTime()}}</p>
+        <img ng-if="ifIs3" src="boom.png"></div>
+    </div>
+    
+    <br>
+</body>
+</html>
