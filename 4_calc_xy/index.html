@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="mathCtrl.js"></script>
+</head>
+
+<body>
+    <div ng-controller="mathCtrl">
+        <p>X = <input type="number" ng-model="x"></p>
+        <p>Y = <input type="number" ng-model="y"></p>
+        <p style="color:red" ng-if="y == 0 && op=='/'">danger! you may divide by zero</p>
+        <p><select ng-model="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select></p>
+        <p>RESULT = {{result}}</p>
+    </div>
+
+    <br>
+</body>
+
+</html>
