@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+
+    <script src="parentCtrl.js"></script>
+    <script src="Mobile.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="parentCtrl">
+
+
+        <table border="1">
+            <tr style="background:lightyellow ; padding: 10px">
+                <th>#</th>
+                <th ng-click="direct=sorter=='model'?!direct:false;sorter='model';">MODEL</th>
+                <th ng-click="direct=sorter=='color'?!direct:false;sorter='color'">COLOR</th>
+                <th ng-click="direct=sorter=='price'?!direct:false;sorter='price'">PRICE</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="m in devices | orderBy:sorter :direct">
+                <td> {{$index}} </td>
+                <td>{{m.model}}</td>
+                <td>{{m.color}}</td>
+                <td>{{m.price}}</td>
+                <td><button>X</button></td>
+            </tr>
+        </table>
+
+        <div>
+            <p>MODEL = <input type="text" /></p>
+            <p>COLOR = <input type="text" /></p>
+            <p>PRICE = <input type="text" /></p>
+        </div>
+        <button>Add Device</button>
+        <p>ID = <input type="text" /></p>
+        <button>Update Device</button>
+
+
+    </div>
+
+
+    <br>
+</body>
+
+</html>
